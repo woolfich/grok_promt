@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import { ThemeProvider } from 'styled-components';
 import Home from './pages/Home';
@@ -17,15 +17,17 @@ const AppContainer = styled.div`
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <AppContainer>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/welder/:id" element={<WelderCard />} />
-          <Route path="/summary" element={<Summary />} />
-          <Route path="/norms" element={<Norms />} />
-          <Route path="/import-export" element={<ImportExport />} />
-        </Routes>
-      </AppContainer>
+      <BrowserRouter basename="/grok_promt">
+        <AppContainer>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/welder/:id" element={<WelderCard />} />
+            <Route path="/summary" element={<Summary />} />
+            <Route path="/norms" element={<Norms />} />
+            <Route path="/import-export" element={<ImportExport />} />
+          </Routes>
+        </AppContainer>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
