@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: './', // ✅ Относительный путь — работает всегда на GitHub Pages
+  base: './grok_promt', // ✅ Относительный путь — работает всегда на GitHub Pages
 });
